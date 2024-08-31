@@ -1,0 +1,36 @@
+# Node.js dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Diretórios temporários
+tmp
+temp
+*.tmp
+*.temp
+
+# Arquivos de build
+build
+dist
+out
+
+# Docker-specific files
+Dockerfile*
+docker-compose*.yml
+
+# Configurações locais
+.env
+*.local
+
+# Cache do editor
+.vscode
+.idea
+
+# Outros
+.DS_Store
+Thumbs.db
