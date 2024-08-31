@@ -85,7 +85,6 @@ export const uploadImagem = async (req: Request, res: Response) => {
       });
     }
 
-    // Verifica se a resposta tem a propriedade value
     const measure_value =
       response && typeof response.value === "number" ? response.value : 0;
     const measure_uuid = uuidv4();

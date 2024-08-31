@@ -17,11 +17,7 @@ router.post(
   uploadImagem
 );
 
-router.patch(
-  "/upload/confirm",
-  authMiddleware,
-  confirmUpload // Função confirmUpload diretamente chamada
-);
+router.patch("/upload/confirm", authMiddleware, confirmUpload);
 
 router.get("/:customer_code/list", authMiddleware, async (req, res) => {
   const { customer_code } = req.params;

@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { confirmMeasureValue, listMeasures } from "../services/measureService";
-import Measure from "../models/measureModel";
 
 export const confirmarLeitura = async (req: Request, res: Response) => {
   try {
@@ -87,7 +86,6 @@ export const listarMedidas = async (req: Request, res: Response) => {
       measureTypeString = upperMeasureType;
     }
 
-    // Chama a função listMeasures do serviço
     const measures = await listMeasures(customer_code, measureTypeString);
 
     if (measures.length === 0) {

@@ -5,11 +5,8 @@ import Measure from "../models/measureModel";
 import { Op } from "sequelize";
 
 dotenv.config();
-
-// Initialize GoogleAIFileManager with your API_KEY.
 const fileManager = new GoogleAIFileManager(process.env.GEMINI_API_KEY || "");
 
-// Function to upload an image to Gemini and return details
 export const uploadImageToGemini = async (
   base64Image: string,
   customer_code: string,
@@ -17,7 +14,6 @@ export const uploadImageToGemini = async (
   measure_datetime: string
 ) => {
   try {
-    // Upload the file and specify a display name
     const uploadResponse = await fileManager.uploadFile(base64Image, {
       mimeType: "image/jpeg",
       displayName: `${measure_type}-${customer_code}-${measure_datetime}`,
@@ -36,7 +32,6 @@ export const uploadImageToGemini = async (
   }
 };
 
-// Function to analyze the image using Gemini API
 export const analyzeImage = async (
   imageUri: string
 ): Promise<{ value: number }> => {
@@ -63,7 +58,6 @@ export const analyzeImage = async (
   }
 };
 
-// Function to check for existing measurements in the database
 export const checkExistingMeasure = async (
   customer_code: string,
   measure_type: string,
